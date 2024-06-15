@@ -1,0 +1,28 @@
+@technoworld_HostAddress = http://localhost:5227
+
+GET {{technoworld_HostAddress}}/weatherforecast/
+Accept: application/json
+
+
+### No permite que se registre dos inventories con el mismo productId y warehouseId.
+### ¥ Los valores válidos para minimumStock son mayores o iguales a 1. 
+### ¥ El valor de currentStock no puede ser menor que el valor de minimumStock. 
+### ¥ Establece que la información que se desea preservar de los Inventories incluye id (int, 
+### obligatorio, autogenerado, llave primaria), productId (int, obligatorio), warehouseId (int, 
+### obligatorio), minimumStock (int, obligatorio), currentStock (int, obligatorio), createdAt 
+### (DateTime, obligatorio).
+
+
+###  ¥ Al momento de registrar el inventory, se almacenará en createdAt la fecha y hora actual del 
+### sistema.  
+### ¥ En el caso de responses que retorna el API con información de inventories, para cada Inventory 
+### se debe incluir id, productId, warehouseId, minimumStock, currentStock, pero no createdAt.  
+### Durante la etapa de desarrollo, le asignan trabajar en específico sobre el Endpoint:
+### /api/v1/inventories 
+### Inventories Endpoint ( http://localhost:{port}/api/v1/inventories ) 
+### Debe implementar solo una operación en el RESTful API: agregar (POST) un inventory. Los valores de id
+### son autogenerados al momento de almacenar la información. Ante una adición satisfactoria, retorne el 
+### HTTP Status 201 y en el body del response el resource incluyendo la información del inventory y su id 
+### generado considerando reglas de negocio. En caso de error incluya el HTTP Status correcto según el 
+### error, así como el mensaje de error en el body del response.
+### 
